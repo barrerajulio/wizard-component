@@ -1,0 +1,33 @@
+---
+description: "A Wizard component."
+labels: ["wizard", "steps", "slider"]
+---
+
+import { Wizard } from "./index";
+
+## React Component for rendering a wizard
+
+A basic wizard that renders a big page in small steps
+
+### Component usage
+
+```js
+<Wizard>
+  <WizardHeader>
+    <h1>Header</h1>
+  </WizardHeader>
+  <WizardBody>
+    <WizardContent>...</WizardContent>
+    <WizardContent>...</WizardContent>
+  </WizardBody>
+  <WizardFooter></WizardFooter>
+</Wizard>
+```
+
+### Using props to customize the wizard
+
+Modify the content to see it change live:
+
+```js live
+<Wizard open></Wizard>
+```
