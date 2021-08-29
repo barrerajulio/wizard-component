@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { ReactChildrenWizardType } from "../../types";
-import { renderChildrenWithWizard } from "../../utils";
+import { ReactChildrenWizardType } from "./types";
+import { renderChildrenWithWizard } from "./utils";
 
 interface IWizardFooterProps {
   children: ReactChildrenWizardType;

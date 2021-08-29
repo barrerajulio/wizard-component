@@ -1,4 +1,4 @@
-import { IUseWizard } from "../hooks";
+import { IUseWizard } from "./use-wizard";
 
 type ReactChildrenWizardType =
   | React.ReactNode

@@ -4,10 +4,8 @@ export interface IWizardContext {
   activeIndex: number;
   setActiveIndex: (value: number) => void;
   setCanGoToNext: (value: boolean) => void;
-  // TODO reset on each page
   onGoToNextPage: boolean;
   setGoToOnNextPage: (value: boolean) => void;
-  // TODO reset on each page change
   canGoToNext: boolean;
 }
 

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useMemo } from "react";
 
-import { WizardContext } from "../context/wizard.context";
+import { WizardContext } from "./wizard.context";
 
 export interface IUseWizard {
   isActive: (index: number) => boolean;

@@ -1,5 +1,5 @@
+import useWizard from "./use-wizard";
 import { ReactChildrenWizardType } from "./types";
-import { useWizard } from "./hooks";
 
 const renderChildrenWithWizard = (children: ReactChildrenWizardType) => {
   let childrenRendered: React.ReactNode = children;

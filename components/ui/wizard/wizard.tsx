@@ -5,7 +5,7 @@ import WizardBody from "./wizard-body";
 import WizardContent from "./wizard-content";
 import WizardFooter from "./wizard-footer";
 import WizardHeader from "./wizard-header";
-import WizardProvider from "../../context/wizard.context";
+import WizardProvider from "./wizard.context";
 
 type IWizard<P> = FC<P> & {
   Body: typeof WizardBody;

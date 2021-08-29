@@ -1,6 +1,6 @@
 ---
 description: "A Wizard component."
-labels: ["wizard", "steps", "slider"]
+labels: ["wizard", "steps", "slider", "presentational"]
 ---
 
 import { Wizard } from "./index";
@@ -13,14 +13,14 @@ A basic wizard that renders a big page in small steps
 
 ```js
 <Wizard>
-  <WizardHeader>
+  <Wizard.Header>
     <h1>Header</h1>
-  </WizardHeader>
-  <WizardBody>
-    <WizardContent>...</WizardContent>
-    <WizardContent>...</WizardContent>
-  </WizardBody>
-  <WizardFooter></WizardFooter>
+  </Wizard.Header>
+  <Wizard.Body>
+    <Wizard.Content>...</Wizard.Content>
+    <Wizard.Content>...</Wizard.Content>
+  </Wizard.Body>
+  <Wizard.Footer></Wizard.Footer>
 </Wizard>
 ```
 
