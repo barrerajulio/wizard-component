@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FC, useEffect } from "react";
 import { Button } from "@material-ui/core";
 
+import { useWizard } from "./hooks";
 import {
   Wizard,
   WizardBody,
@@ -8,6 +9,19 @@ import {
   WizardFooter,
   WizardHeader,
 } from "./index";
+
+const DemoComponent: FC = () => {
+  const { enableGoToNextPage, nextPage, onGoToNextPage } = useWizard();
+  useEffect(() => {
+    if (onGoToNextPage !== true) {
+      return;
+    }
+    console.log("should GoTo next page");
+    setTimeout(() => nextPage(), 4000);
+  }, [onGoToNextPage]);
+
+  return <Button onClick={enableGoToNextPage}>Enable go to next</Button>;
+};
 
 export const BasicWizard = () => {
   return (
@@ -18,11 +32,7 @@ export const BasicWizard = () => {
         </WizardHeader>
         <WizardBody>
           <WizardContent>
-            {(context) => (
-              <Button onClick={() => context.enableGoToNextPage()}>
-                Enable go to next
-              </Button>
-            )}
+            <DemoComponent />
           </WizardContent>
           <WizardContent>Page 2</WizardContent>
         </WizardBody>
@@ -40,7 +50,7 @@ export const BasicWizard = () => {
                 disabled={!context.canGoToNext}
                 variant="contained"
                 color="primary"
-                onClick={context.nextPage}
+                onClick={context.shouldGoToNext}
               >
                 Next
               </Button>

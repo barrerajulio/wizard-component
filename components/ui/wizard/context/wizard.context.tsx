@@ -5,7 +5,7 @@ export interface IWizardContext {
   setActiveIndex: (value: number) => void;
   setCanGoToNext: (value: boolean) => void;
   // TODO reset on each page
-  goToOnNextPage: boolean;
+  onGoToNextPage: boolean;
   setGoToOnNextPage: (value: boolean) => void;
   // TODO reset on each page change
   canGoToNext: boolean;
@@ -15,13 +15,13 @@ const WizardContext = createContext<IWizardContext>({} as any);
 
 const WizardProvider: FC = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [goToOnNextPage, setGoToOnNextPage] = useState(false);
+  const [onGoToNextPage, setGoToOnNextPage] = useState(false);
   const [canGoToNext, setCanGoToNext] = useState(false);
   const value = useMemo(
     () => ({
       activeIndex,
       canGoToNext,
-      goToOnNextPage,
+      onGoToNextPage,
       setActiveIndex,
       setCanGoToNext,
       setGoToOnNextPage,
@@ -29,7 +29,7 @@ const WizardProvider: FC = ({ children }) => {
     [
       activeIndex,
       canGoToNext,
-      goToOnNextPage,
+      onGoToNextPage,
       setActiveIndex,
       setCanGoToNext,
       setGoToOnNextPage,

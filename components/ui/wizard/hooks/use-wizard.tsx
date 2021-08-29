@@ -8,6 +8,7 @@ export interface IUseWizard {
   nextPage: () => void;
   prevPage: () => void;
   goToPage: (value: number) => void;
+  onGoToNextPage: boolean;
   canGoToNext: boolean;
   enableGoToNextPage: () => void;
   disableGoToNextPage: () => void;
@@ -23,6 +24,7 @@ const useWizard = (): IUseWizard => {
   const {
     activeIndex,
     canGoToNext,
+    onGoToNextPage,
     setActiveIndex,
     setCanGoToNext,
     setGoToOnNextPage,
@@ -59,6 +61,7 @@ const useWizard = (): IUseWizard => {
       disableGoToNextPage,
       enableGoToNextPage,
       goToPage,
+      onGoToNextPage,
       isActive,
       nextPage,
       prevPage,
@@ -68,6 +71,7 @@ const useWizard = (): IUseWizard => {
       canGoToNext,
       disableGoToNextPage,
       enableGoToNextPage,
+      onGoToNextPage,
       goToPage,
       isActive,
       nextPage,
