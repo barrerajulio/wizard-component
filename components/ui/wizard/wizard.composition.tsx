@@ -1,14 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { Button } from "@material-ui/core";
 
-import { useWizard } from "./hooks";
-import {
-  Wizard,
-  WizardBody,
-  WizardContent,
-  WizardFooter,
-  WizardHeader,
-} from "./index";
+import { useWizard, Wizard } from "./index";
 
 const DemoComponent: FC = () => {
   const { enableGoToNextPage, nextPage, onGoToNextPage } = useWizard();
@@ -27,16 +20,16 @@ export const BasicWizard = () => {
   return (
     <Wizard open>
       <React.Fragment>
-        <WizardHeader>
+        <Wizard.Header>
           <h1>Header</h1>
-        </WizardHeader>
-        <WizardBody>
-          <WizardContent>
+        </Wizard.Header>
+        <Wizard.Body>
+          <Wizard.Content>
             <DemoComponent />
-          </WizardContent>
-          <WizardContent>Page 2</WizardContent>
-        </WizardBody>
-        <WizardFooter>
+          </Wizard.Content>
+          <Wizard.Content>Page 2</Wizard.Content>
+        </Wizard.Body>
+        <Wizard.Footer>
           {(context) => (
             <React.Fragment>
               <Button
@@ -56,7 +49,7 @@ export const BasicWizard = () => {
               </Button>
             </React.Fragment>
           )}
-        </WizardFooter>
+        </Wizard.Footer>
       </React.Fragment>
     </Wizard>
   );

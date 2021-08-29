@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import useWizard from "../hooks/use-wizard";
+import useWizard from "../../hooks/use-wizard";
 
 interface IWizardBodyProps {
   children: React.ReactNodeArray;
