@@ -10,6 +10,7 @@ export interface IUseTextField {
   updateSelectedIndex: (value: number) => void;
   resetSelectedIndex: () => void;
   selectedIndex?: number;
+  valueLength: number;
 }
 
 const useTextField = (): IUseTextField => {
@@ -49,6 +50,7 @@ const useTextField = (): IUseTextField => {
     resetSelectedIndex,
     selectedIndex,
     updateSelectedIndex,
+    valueLength: value.length,
   };
 };
 

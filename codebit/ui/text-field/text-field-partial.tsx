@@ -40,11 +40,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const RenderPartial: FC<IRenderPartialProps> = ({ index }) => {
-  const { getValueByIndex, isActiveIndex, updateSelectedIndex } =
+  const { getValueByIndex, isActiveIndex, updateSelectedIndex, valueLength } =
     useTextField();
   const classes = useStyles();
   const handleOnClickBox = () => {
-    updateSelectedIndex(index);
+    return updateSelectedIndex(
+      !getValueByIndex(index).length ? valueLength : index
+    );
   };
   const boxClasses = [classes.boxBase];
   if (isActiveIndex(index)) {

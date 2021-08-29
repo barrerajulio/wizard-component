@@ -11,7 +11,7 @@
 {
     "ui/text-field": {
         "scope": "barrerajulio.codebit",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "codebit/ui/text-field"
     },
