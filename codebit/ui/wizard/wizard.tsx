@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Modal, ModalProps, Paper } from "@material-ui/core";
+import { Box, BoxProps } from "@material-ui/core";
 
 import WizardBody from "./wizard-body";
 import WizardContent from "./wizard-content";
@@ -14,14 +14,12 @@ type IWizard<P> = FC<P> & {
   Header: typeof WizardHeader;
 };
 
-export interface WizardProps extends ModalProps {}
+export interface WizardProps extends BoxProps {}
 
 const Wizard: IWizard<WizardProps> = ({ children, ...validProps }) => {
   return (
     <WizardProvider>
-      <Modal {...validProps}>
-        <Paper>{children}</Paper>
-      </Modal>
+      <Box {...validProps}>{children}</Box>
     </WizardProvider>
   );
 };

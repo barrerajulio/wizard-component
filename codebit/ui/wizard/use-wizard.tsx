@@ -31,9 +31,9 @@ const useWizard = (): IUseWizard => {
   } = context;
   const goToPage = useCallback(
     (value: number) => {
-      setActiveIndex(value);
       setGoToOnNextPage(false);
       setCanGoToNext(false);
+      setActiveIndex(value);
     },
     [setActiveIndex]
   );

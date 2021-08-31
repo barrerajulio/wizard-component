@@ -11,13 +11,19 @@
 {
     "ui/text-field": {
         "scope": "barrerajulio.codebit",
-        "version": "0.0.3",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "codebit/ui/text-field"
     },
+    "ui/typography": {
+        "scope": "barrerajulio.codebit",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "codebit/ui/typography"
+    },
     "ui/wizard": {
         "scope": "barrerajulio.codebit",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "mainFile": "index.ts",
         "rootDir": "codebit/ui/wizard"
     },

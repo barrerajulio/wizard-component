@@ -10,13 +10,21 @@ import { Box, makeStyles, TextFieldProps } from "@material-ui/core";
 
 import TextFieldProvider from "./text-field.context";
 import useTextField from "./use-text-field";
+import { BaseTextFieldProps } from "./types";
 import { Key } from "./enum";
 
-export type TextFieldPartialProps = Omit<TextFieldProps, "type"> & {
-  type: "partial";
-  length: number;
-  value?: string;
-};
+export type TextFieldPartialProps = Omit<TextFieldProps, "type"> &
+  BaseTextFieldProps & {
+    type: "partial";
+    length: number;
+    value?: string;
+    onChange?: (
+      event: DetailedHTMLProps<
+        InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+      > & { target: HTMLInputElement }
+    ) => void;
+  };
 
 interface IRenderPartialProps {
   index: number;
@@ -62,7 +70,9 @@ const RenderPartial: FC<IRenderPartialProps> = ({ index }) => {
 
 const RenderInput: FC<TextFieldPartialProps> = ({
   value: defaultValue,
+  onChange,
   length,
+  ...validProps
 }) => {
   const classes = useStyles();
   const {
@@ -109,6 +119,7 @@ const RenderInput: FC<TextFieldPartialProps> = ({
   ) => {
     setValue(event.target.value);
     updateSelectedIndex(event.target.selectionStart);
+    onChange && onChange(event);
   };
   const handleInputKeyPress = (
     event: DetailedHTMLProps<
@@ -141,6 +152,7 @@ const RenderInput: FC<TextFieldPartialProps> = ({
       onKeyUp={handleInputKeyPress}
       onChange={handleInputChange}
       maxLength={length}
+      {...(validProps as any)}
     />
   );
 };

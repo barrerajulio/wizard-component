@@ -1,3 +1,4 @@
+import NumberFormat from "react-number-format";
 import React, { FC } from "react";
 import {
   TextField as TextFieldMui,
@@ -5,8 +6,11 @@ import {
 } from "@material-ui/core";
 
 import TextFieldPartial, { TextFieldPartialProps } from "./text-field-partial";
+import { BaseTextFieldProps } from "./types";
 
-interface TextFieldMuiProps extends Omit<TextFieldPropsMui, "type"> {
+interface TextFieldMuiProps
+  extends Omit<TextFieldPropsMui, "type">,
+    BaseTextFieldProps {
   type:
     | "color"
     | "date"
@@ -32,6 +36,29 @@ interface TextFieldMuiProps extends Omit<TextFieldPropsMui, "type"> {
 
 export type TextFieldProps = TextFieldPartialProps | TextFieldMuiProps;
 
+const NumberFormatCustom = ({ format, ...validProps }: { format: string }) => {
+  return <NumberFormat format={format} {...validProps} />;
+};
+
+const DefaultTextField: FC<TextFieldProps> = ({
+  mask: format,
+  ...validProps
+}) => {
+  if (format) {
+    return (
+      <TextFieldMui
+        InputProps={{
+          inputComponent: NumberFormatCustom as any,
+          inputProps: { format },
+          ...(validProps as any),
+        }}
+        {...(validProps as TextFieldPropsMui)}
+      />
+    );
+  }
+  return <TextFieldMui {...(validProps as TextFieldPropsMui)} />;
+};
+
 const TextField: FC<TextFieldProps> = ({ type, ...validProps }) => {
   if (type === "partial") {
     return (
@@ -41,7 +68,7 @@ const TextField: FC<TextFieldProps> = ({ type, ...validProps }) => {
       />
     );
   }
-  return <TextFieldMui type={type} {...(validProps as TextFieldPropsMui)} />;
+  return <DefaultTextField type={type} {...validProps} />;
 };
 
 export default TextField;

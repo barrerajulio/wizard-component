@@ -39,7 +39,8 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "bit": "1.0.20"
+        "bit": "1.0.20",
+        "react-number-format": "4.7.3"
       },
       "peerDependencies": {
         "@material-ui/core": "4.12.3",

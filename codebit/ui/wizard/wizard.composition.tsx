@@ -10,15 +10,28 @@ const DemoComponent: FC = () => {
       return;
     }
     console.log("should GoTo next page");
-    setTimeout(() => nextPage(), 4000);
+    setTimeout(() => nextPage(), 2000);
   }, [onGoToNextPage]);
 
   return <Button onClick={enableGoToNextPage}>Enable go to next</Button>;
 };
 
+const DemoComponent2 = () => {
+  const { enableGoToNextPage, nextPage, onGoToNextPage } = useWizard();
+  useEffect(() => {
+    onGoToNextPage === true && nextPage();
+  }, [onGoToNextPage]);
+  return (
+    <React.Fragment>
+      <h1>Paso 2</h1>
+      <Button onClick={enableGoToNextPage}>Enable go to next</Button>
+    </React.Fragment>
+  );
+};
+
 export const BasicWizard = () => {
   return (
-    <Wizard open>
+    <Wizard>
       <React.Fragment>
         <Wizard.Header>
           <h1>Header</h1>
@@ -27,7 +40,12 @@ export const BasicWizard = () => {
           <Wizard.Content>
             <DemoComponent />
           </Wizard.Content>
-          <Wizard.Content>Page 2</Wizard.Content>
+          <Wizard.Content>
+            <DemoComponent2 />
+          </Wizard.Content>
+          <Wizard.Content>
+            <h1>Paso 3</h1>
+          </Wizard.Content>
         </Wizard.Body>
         <Wizard.Footer>
           {(context) => (

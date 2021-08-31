@@ -8,6 +8,7 @@ importers:
       core-js: registry.npmjs.org/core-js/3.16.4
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-number-format: registry.npmjs.org/react-number-format/4.7.3_react-dom@17.0.2+react@17.0.2
       react-scripts: registry.npmjs.org/react-scripts/4.0.3_react@17.0.2+typescript@4.4.2
       typescript: registry.npmjs.org/typescript/4.4.2
       web-vitals: registry.npmjs.org/web-vitals/1.1.2
@@ -34,9 +35,14 @@ importers:
       core-js: ^3.16.4
       react: ^17.0.2
       react-dom: ^17.0.2
+      react-number-format: 4.7.3
       react-scripts: 4.0.3
       typescript: ^4.4.2
       web-vitals: ^1.1.2
+  codebit/ui/text-field:
+    specifiers: {}
+  codebit/ui/typography:
+    specifiers: {}
   codebit/ui/wizard:
     specifiers: {}
 lockfileVersion: 5.2
@@ -15040,6 +15046,22 @@ packages:
       registry: https://node.bit.dev/
       tarball: https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz
     version: 17.0.2
+  registry.npmjs.org/react-number-format/4.7.3_react-dom@17.0.2+react@17.0.2:
+    dependencies:
+      prop-types: registry.npmjs.org/prop-types/15.7.2
+      react: registry.npmjs.org/react/17.0.2
+      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+    dev: false
+    id: registry.npmjs.org/react-number-format/4.7.3
+    name: react-number-format
+    peerDependencies:
+      react: ^0.14 || ^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0
+      react-dom: ^0.14 || ^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0
+    resolution:
+      integrity: sha512-4EvcANjstypQ5anhanmdEioGc49qbnErfS+yqbhatC0vzQ1okplkWNb0DIY7ABu4RhaxzttEz6pypEy8KsqgBQ==
+      registry: https://node.bit.dev/
+      tarball: https://registry.npmjs.org/react-number-format/-/react-number-format-4.7.3.tgz
+    version: 4.7.3
   registry.npmjs.org/react-refresh/0.8.3:
     dev: false
     engines:
